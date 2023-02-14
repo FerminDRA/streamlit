@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.title("Search names")
+st.write("Names")
 DATA_URL="dataset.csv"
 
 

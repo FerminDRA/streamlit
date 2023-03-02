@@ -30,7 +30,7 @@ data= load_data(1000)
 data_load_state.text("Done!")
 
 st.header("Peliculas")
-agree=sidebar.checkbox("Mostrar todos los filmes")
+agree=sidebar.checkbox("Mostrar todas las peliculas")
 if agree:
     st.dataframe(data)
 
@@ -40,7 +40,7 @@ botonBuscar = st.sidebar.button('Buscar pelicula')
 if (botonBuscar):
    peliculas = filtro_pelicula(titulofilme.upper())
    count_row = peliculas.shape[0]  # Gives number of rows
-   st.write(f"Total filmes mostrados : {count_row}")
+   st.write(f"Total de peliculas mostradas : {count_row}")
    st.write(peliculas)
 
 selDirector = st.sidebar.selectbox("Director", data['director'].unique())
@@ -49,6 +49,6 @@ botonFiltroDirector = st.sidebar.button('Filtro director')
 if (botonFiltroDirector):
    director = filtro_director(selDirector)
    count_row = director.shape[0]  # Gives number of rows
-   st.write(f"Total filmes : {count_row}")
+   st.write(f"Total de peliculas : {count_row}")
 
    st.dataframe(director)

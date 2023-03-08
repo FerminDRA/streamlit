@@ -34,7 +34,7 @@ if st.sidebar.checkbox('Recorridos por hora'):
     hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
     st.bar_chart(hist_values)
 
-hour_to_filter = st.sidebar.slider('Hora', 0, 23, 17)
+hour_to_filter = st.sidebar.slider('Hora', 0, 23, 12)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Mapa de recorridos alas %s:00' % hour_to_filter)
